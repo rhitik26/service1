@@ -1,0 +1,24 @@
+<div class="container">
+    <table class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="books.length>0">
+          <tr *ngFor="let book of books">
+            <th scope="row">{{book.id}}</th>
+            <td>{{book.title}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.price}}</td>
+            <td><a routerLink="edit/{{book.id}}" class="btn btn-sm btn-dark">Edit</a>
+              <a routerLink="addComponent/{{book.id}}" class="btn btn-sm btn-dark">Add Comment</a>
+              <button type="submit" (click)="viewComments">View C</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
