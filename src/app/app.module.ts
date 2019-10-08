@@ -7,8 +7,10 @@ import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { AddComponent } from './add/add.component';
 import { ListComponent } from './list/list.component';
+import { from } from 'rxjs';
 import { EditComponent } from './edit/edit.component';
-import { AddComponentComponent } from './add-component/add-component.component';
+import { DetailsComponent } from './details/details.component';
+import { ReviewComponent } from './review/review.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { AddComponentComponent } from './add-component/add-component.component';
     AddComponent,
     ListComponent,
     EditComponent,
-    AddComponentComponent
+    DetailsComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,

@@ -1,27 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import { Book } from '../book';
 import { DataService } from '../data.service';
-
+import { User } from '../data.modal';
+  import { from } from 'rxjs';
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
   styleUrls: ['./add.component.css']
 })
 export class AddComponent implements OnInit {
-  id:number=0;
-  author:string;
-  title:string;
-  price:number;
-  newBook:Book;
-
-  constructor( private svc:DataService ) {  }
+  name: string;
+  auna: string;
+  price: string;
+  constructor(private dataservice : DataService) { }
 
   ngOnInit() {
   }
-  createBook(){
-    ++this.id;
-    this.newBook= new Book(this.id,this.author,this.title,this.price);
-    console.log(this.newBook);
-    this.svc.create(this.newBook);
+  
+  add(){
+    this.dataservice.add(this.name,this.auna,this.price);
+    this.reset();
+  }
+  reset(){
+    this.name="";
+    this.auna="";
+    this.price="";
   }
 }
